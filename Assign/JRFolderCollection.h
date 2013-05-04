@@ -30,6 +30,7 @@
 -(NSDictionary *)toDictionary;
 
 #pragma mark Other methods
+-(void)backgroundScanForFolders;
 -(void)scanForFolders;
 -(NSArray *) urlsFilteredByString:(NSString *)str;
 

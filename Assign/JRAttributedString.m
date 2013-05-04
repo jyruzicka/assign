@@ -49,7 +49,6 @@ static NSDictionary *kTextColour;
 #pragma mark Setting things
 
 -(void)setTheme:(NSString *)theme {
-    DLog(@"Setting theme \"%@\" for %@",theme,[string string]);
     [string addAttribute:NSForegroundColorAttributeName value:kTextColour[theme] range:NSMakeRange(0,[string length])];
 }
 

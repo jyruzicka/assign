@@ -39,7 +39,7 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
             [self registerHotkey:kc];
         }
         
-        [self scanForFolders];
+        [self backgroundScanForFolders];
     }
     return self;
 }
@@ -54,7 +54,7 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
     if (self = [super init])
     {
         [self setRootFolder:url];
-        [self scanForFolders];
+        [self backgroundScanForFolders];
     }
     return self;
 }
@@ -102,6 +102,11 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 }
 
 #pragma mark -
+
+-(void)backgroundScanForFolders {
+    NSThread *scanThread = [[NSThread alloc] initWithTarget:self selector:@selector(scanForFolders) object:nil];
+    [scanThread start];
+}
 
 -(void)scanForFolders
 {

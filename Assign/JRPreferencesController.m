@@ -53,6 +53,7 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
     NSOpenPanel *panel = [self openPanel];
     if ([panel runModal] == NSOKButton) {
         [self.targetCollection setRootFolder:[panel URLs][0]];
+        [self.targetCollection backgroundScanForFolders];
         [catalogueField setStringValue:[[self.targetCollection rootFolder] path]];
 
         [self saveAndRefreshPreferences];
