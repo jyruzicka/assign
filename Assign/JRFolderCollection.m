@@ -108,8 +108,10 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 
 -(void)scanForFolders
 {
-    [self.folders removeAllObjects];
     if (self.rootFolder) {
+        // We will store our new collection in here, then swap them over at the end.
+        NSMutableArray *newCollection = [NSMutableArray array];
+    
         NSFileManager *fm = [NSFileManager defaultManager];
         NSDirectoryEnumerator *de = [fm enumeratorAtURL:self.rootFolder includingPropertiesForKeys:@[NSURLIsDirectoryKey, NSURLIsPackageKey] options:NSDirectoryEnumerationSkipsHiddenFiles|NSDirectoryEnumerationSkipsPackageDescendants errorHandler:nil];
 
@@ -119,10 +121,12 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
             [theURL getResourceValue:&isDir forKey:NSURLIsDirectoryKey error:NULL];
             [theURL getResourceValue:&isPackage forKey:NSURLIsPackageKey error:NULL];
             if ([isDir boolValue] && ![isPackage boolValue])
-                [self.folders addObject: [JRURL URLWithURL:theURL parent:self]];
+                [newCollection addObject: [JRURL URLWithURL:theURL parent:self]];
         }
+        self.folders = newCollection;
+        DLog(@"%lu folders", [self.folders count]);
     }
-    DLog(@"%lu folders", [self.folders count]);
+
 }
 
 -(NSArray *)urlsFilteredByString:(NSString *)str
