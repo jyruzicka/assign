@@ -10,7 +10,9 @@
 #import <Carbon/Carbon.h>
 @class JRURL, JRKeyCombo;
 
-@interface JRFolderCollection : NSObject {}
+@interface JRFolderCollection : NSObject {
+    NSThread *scanningThread;
+}
 @property (nonatomic) NSURL *rootFolder;
 @property (nonatomic) NSMutableArray *folders;
 @property (nonatomic) NSValue *registeredHotkey;

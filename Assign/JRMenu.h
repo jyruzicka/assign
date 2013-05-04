@@ -15,5 +15,6 @@
 
 +(id)menuWithAssignOptions;
 +(id)menuWithoutAssignOptions;
+
 @end
 

@@ -105,8 +105,13 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 }
 
 -(void)backgroundScanForFolders {
-    NSThread *scanThread = [[NSThread alloc] initWithTarget:self selector:@selector(scanForFolders) object:nil];
-    [scanThread start];
+    // Cancel any current scan
+    if (scanningThread)
+        [scanningThread cancel];
+    
+    //Start this scan
+    scanningThread = [[NSThread alloc] initWithTarget:self selector:@selector(scanForFolders) object:nil];
+    [scanningThread start];
 }
 
 -(void)scanForFolders
@@ -128,9 +133,14 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
             if ([isDir boolValue] && ![isPackage boolValue])
                 [newCollection addObject: [JRURL URLWithURL:theURL parent:self]];
         }
-        self.folders = newCollection;
-        DLog(@"%lu folders", [self.folders count]);
-        [delegate decreaseScansInProgress];
+        //Quick check - did we get cancelled at any point?
+        if (![[NSThread currentThread] isCancelled]) {
+            self.folders = newCollection;
+            DLog(@"%lu folders", [self.folders count]);
+            [delegate decreaseScansInProgress];
+            if (scanningThread == [NSThread currentThread])
+                scanningThread = nil;
+        }
     }
 
 }
