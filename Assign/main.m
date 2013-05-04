@@ -7,8 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "JRAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
-    return NSApplicationMain(argc, (const char **)argv);
+    NSApplication * application = [NSApplication sharedApplication];
+    JRAppDelegate *appDelegate = [[JRAppDelegate alloc] init];
+    
+    [application setDelegate:appDelegate];
+    [application run];
+    
+    return EXIT_SUCCESS;
 }

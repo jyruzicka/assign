@@ -8,176 +8,183 @@
 
 #import "JRAppDelegate.h"
 
+#import "Finder.h"
+
+#import "JRMenu.h"
+#import "JRStatusItem.h"
+
+#import "JRFolderCollection.h"
+#import "JRKeyCombo.h"
+
+#import "JRPreferencesController.h"
+#import "JRAssignWindowController.h"
+
+
 @implementation JRAppDelegate
 
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize managedObjectContext = _managedObjectContext;
+#pragma mark Inherited methods
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    defaults = [NSUserDefaults standardUserDefaults];
+    [self loadFolderCollectionsFromDefaults];
+    self.statusItem = [[JRStatusItem alloc] init];
 }
 
-// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "jyruzicka.Assign" in the user's Application Support directory.
-- (NSURL *)applicationFilesDirectory
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"jyruzicka.Assign"];
+//Runs when it loses focus
+-(void)applicationDidResignActive:(NSNotification *)notification {
+    [self disappearAssignWindow:notification];
+    DLog(@"Lost focus");
 }
 
-// Creates if necessary and returns the managed object model for the application.
-- (NSManagedObjectModel *)managedObjectModel
-{
-    if (_managedObjectModel) {
-        return _managedObjectModel;
-    }
-	
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Assign" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
+#pragma mark -
+#pragma mark Defaults-related
+
+-(void)saveFolderCollectionsToDefaults {
+    DLog(@"Defaults save called.");
+    NSMutableArray *dicts = [NSMutableArray array];
+    for (JRFolderCollection *fc in [self folderCollections])
+        [dicts addObject:[fc toDictionary]];
+    
+    [defaults setObject:dicts forKey:@"folderCollections"];
 }
 
-// Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (_persistentStoreCoordinator) {
-        return _persistentStoreCoordinator;
-    }
+//Load folderCollections
+-(void)loadFolderCollectionsFromDefaults {
+    self.folderCollections = [NSMutableArray array];
     
-    NSManagedObjectModel *mom = [self managedObjectModel];
-    if (!mom) {
-        NSLog(@"%@:%@ No model to generate a store from", [self class], NSStringFromSelector(_cmd));
-        return nil;
-    }
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *applicationFilesDirectory = [self applicationFilesDirectory];
-    NSError *error = nil;
-    
-    NSDictionary *properties = [applicationFilesDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&error];
-    
-    if (!properties) {
-        BOOL ok = NO;
-        if ([error code] == NSFileReadNoSuchFileError) {
-            ok = [fileManager createDirectoryAtPath:[applicationFilesDirectory path] withIntermediateDirectories:YES attributes:nil error:&error];
+    NSArray *allCollections = [defaults arrayForKey:@"folderCollections"];
+    if (allCollections) { // We've saved some data to disk - so let's use it
+        for (NSDictionary *d in allCollections) {
+            JRFolderCollection *fc = [JRFolderCollection folderCollectionWithDictionary:d];
+            [self.folderCollections addObject:fc];
         }
-        if (!ok) {
-            [[NSApplication sharedApplication] presentError:error];
-            return nil;
-        }
-    } else {
-        if (![properties[NSURLIsDirectoryKey] boolValue]) {
-            // Customize and localize this error.
-            NSString *failureDescription = [NSString stringWithFormat:@"Expected a folder to store application data, found a file (%@).", [applicationFilesDirectory path]];
+    }
+    else // Make defaults
+        [self.folderCollections addObject: [JRFolderCollection defaultFolderCollection]];
+}
+
+// Virtual getter/setter for defaults
+-(NSString *)theme {
+    NSString *theme = [defaults stringForKey:@"theme"];
+    if (!theme) theme = @"Light";
+    DLog(@"Returning theme: %@", theme);
+    return theme;
+}
+
+-(void)setTheme:(NSString *)theme {
+    [defaults setObject:theme forKey:@"theme"];
+    if (assign) [assign setTheme:theme];
+}
+
+#pragma mark Window manipulation
+
+-(void)openAssignWindowForFolderCollection:(JRFolderCollection *)collection {
+    NSArray *finderSelection = [self retrieveFinderSelection];
+    if ([finderSelection count] == 0)
+        NSBeep();
+    else {
+        [self disappearAssignWindow:self];
+        assign = [JRAssignWindowController windowWithFolderCollection:collection targetFiles:finderSelection theme:self.theme];
+        [assign show];
+    }
+}
+
+-(IBAction)displayAssignWindow:(id)sender {
+    [self openAssignWindowForFolderCollection:[self folderCollections][0]];
+}
+
+-(IBAction)disappearAssignWindow:(id)sender {
+    if (assign) {
+        [assign close];
+        assign = nil;
+    }
+}
+
+
+-(IBAction)displayPreferences:(id)sender {
+    if (preferences == nil) preferences = [[JRPreferencesController alloc]init];
+    [self disappearAssignWindow:sender];
+    [preferences toggleVisible];
+}
+
+#pragma mark -
+-(NSArray *)retrieveFinderSelection{
+    FinderApplication *finder = [SBApplication applicationWithBundleIdentifier:@"com.apple.finder"];
+    NSArray *sbFinderSelection = (NSArray *)[[finder selection] get];
+    NSMutableArray *returnArray = [NSMutableArray array];
+    
+    for(FinderItem *item in sbFinderSelection)
+        [returnArray addObject:[NSURL URLWithString:[item URL]]];
+    
+    return returnArray;
+}
+
+#pragma mark Login items
+-(BOOL)startsAtLogin {
+    if ([self loginItem])
+        return YES;
+    else
+        return NO;
+}
+
+-(void)setStartAtLogin:(BOOL)startAtLogin {
+    LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+    
+    if (loginItems) {
+        if (startAtLogin) {
+            NSString *appPath = [[NSBundle mainBundle] bundlePath];
+            CFURLRef url = (__bridge CFURLRef)[NSURL fileURLWithPath:appPath];
             
-            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-            [dict setValue:failureDescription forKey:NSLocalizedDescriptionKey];
-            error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:101 userInfo:dict];
-            
-            [[NSApplication sharedApplication] presentError:error];
-            return nil;
+            LSSharedFileListItemRef item = LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemLast, NULL, NULL, url, NULL, NULL);
+            if (item)
+                CFRelease(item);
+        }
+        else {
+            LSSharedFileListItemRef toRemove = [self loginItem];
+            LSSharedFileListItemRemove(loginItems, toRemove);
+        }
+    }
+}
+
+//These are private
+-(LSSharedFileListItemRef)loginItem {
+    NSString *appPath = [[NSBundle mainBundle] bundlePath];
+    CFURLRef url = (__bridge CFURLRef)[NSURL fileURLWithPath:appPath];
+    
+    LSSharedFileListRef loginItems = LSSharedFileListCreate(NULL, kLSSharedFileListSessionLoginItems, NULL);
+    
+    if (loginItems) {
+        NSArray *loginArray = (__bridge NSArray *)LSSharedFileListCopySnapshot(loginItems, nil);
+        for (id idItem in loginArray) {
+            LSSharedFileListItemRef item = (__bridge LSSharedFileListItemRef) idItem;
+            if (LSSharedFileListItemResolve(item, 0, &url, NULL) == noErr) {
+                NSString *urlPath = [(__bridge NSURL *)url path];
+                if ([urlPath hasPrefix: appPath])
+                    return item;
+            }
         }
     }
     
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"Assign.storedata"];
-    NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
-        [[NSApplication sharedApplication] presentError:error];
-        return nil;
-    }
-    _persistentStoreCoordinator = coordinator;
-    
-    return _persistentStoreCoordinator;
+    return nil;
 }
 
-// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) 
-- (NSManagedObjectContext *)managedObjectContext
-{
-    if (_managedObjectContext) {
-        return _managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
-        [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
-        NSError *error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        [[NSApplication sharedApplication] presentError:error];
-        return nil;
-    }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-
-    return _managedObjectContext;
+#pragma mark folder collections
+/* Adds a folderCollection to the global list
+ */
+-(void)addFolderCollection:(JRFolderCollection *)fc {
+    [self.folderCollections addObject:fc];
 }
 
-// Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
-- (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window
-{
-    return [[self managedObjectContext] undoManager];
+/* Removes a folderCollection from the global list.
+ * Returns YES if folderCollection was removed, and
+ * NO if it can't be found.
+ */
+-(BOOL)removeFolderCollection:(JRFolderCollection *)fc {
+    if ([self.folderCollections containsObject:fc]) {
+        [self.folderCollections removeObject:fc];
+        return YES;
+    }
+    else return NO;
 }
-
-// Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
-- (IBAction)saveAction:(id)sender
-{
-    NSError *error = nil;
-    
-    if (![[self managedObjectContext] commitEditing]) {
-        NSLog(@"%@:%@ unable to commit editing before saving", [self class], NSStringFromSelector(_cmd));
-    }
-    
-    if (![[self managedObjectContext] save:&error]) {
-        [[NSApplication sharedApplication] presentError:error];
-    }
-}
-
-- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
-{
-    // Save changes in the application's managed object context before the application terminates.
-    
-    if (!_managedObjectContext) {
-        return NSTerminateNow;
-    }
-    
-    if (![[self managedObjectContext] commitEditing]) {
-        NSLog(@"%@:%@ unable to commit editing to terminate", [self class], NSStringFromSelector(_cmd));
-        return NSTerminateCancel;
-    }
-    
-    if (![[self managedObjectContext] hasChanges]) {
-        return NSTerminateNow;
-    }
-    
-    NSError *error = nil;
-    if (![[self managedObjectContext] save:&error]) {
-
-        // Customize this code block to include application-specific recovery steps.              
-        BOOL result = [sender presentError:error];
-        if (result) {
-            return NSTerminateCancel;
-        }
-
-        NSString *question = NSLocalizedString(@"Could not save changes while quitting. Quit anyway?", @"Quit without saves error question message");
-        NSString *info = NSLocalizedString(@"Quitting now will lose any changes you have made since the last successful save", @"Quit without saves error question info");
-        NSString *quitButton = NSLocalizedString(@"Quit anyway", @"Quit anyway button title");
-        NSString *cancelButton = NSLocalizedString(@"Cancel", @"Cancel button title");
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:question];
-        [alert setInformativeText:info];
-        [alert addButtonWithTitle:quitButton];
-        [alert addButtonWithTitle:cancelButton];
-
-        NSInteger answer = [alert runModal];
-        
-        if (answer == NSAlertAlternateReturn) {
-            return NSTerminateCancel;
-        }
-    }
-
-    return NSTerminateNow;
-}
-
 @end

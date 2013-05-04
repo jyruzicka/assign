@@ -7,15 +7,42 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class JRStatusItem;
+@class JRPreferencesController;
+@class JRAssignWindowController;
+@class JRFolderCollection;
 
-@interface JRAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
+@interface JRAppDelegate : NSObject <NSApplicationDelegate>{
+    JRAssignWindowController *assign;
+    JRPreferencesController *preferences;
+    NSUserDefaults *defaults;
+}
 
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property JRStatusItem *statusItem;
+@property NSMutableArray *folderCollections;
+@property BOOL themeIsLight;
 
-- (IBAction)saveAction:(id)sender;
+#pragma mark Defaults-related activities
+-(void)saveFolderCollectionsToDefaults;
+//Theme virtual setter/getter
+-(NSString *)theme;
+-(void)setTheme:(NSString *)theme;
 
+#pragma mark Window manipulation
+-(void)openAssignWindowForFolderCollection:(JRFolderCollection *)collection;
+-(IBAction)displayAssignWindow:(id)sender;
+-(IBAction)disappearAssignWindow:(id)sender;
+-(IBAction)displayPreferences:(id)sender;
+
+#pragma mark -
+-(NSArray *)retrieveFinderSelection;
+
+#pragma mark Login items
+-(BOOL)startsAtLogin;
+-(void)setStartAtLogin:(BOOL)startAtLogin;
+
+#pragma mark folder collections
+-(void)addFolderCollection:(JRFolderCollection *)fc;
+-(BOOL)removeFolderCollection:(JRFolderCollection *)fc;
 @end

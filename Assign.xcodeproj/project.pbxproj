@@ -7,26 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D01D10416F550A40031F2B5 /* JRAssignWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01D10316F550A40031F2B5 /* JRAssignWindowController.m */; };
+		3D01D10B16F55F9A0031F2B5 /* JRIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01D10A16F55F9A0031F2B5 /* JRIconView.m */; };
+		3D39C51A16D5E65600A81878 /* JRMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D39C51916D5E65600A81878 /* JRMenu.m */; };
+		3D3AA3E416E2C722007E3604 /* JRPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3AA3E316E2C722007E3604 /* JRPreferencesController.m */; };
+		3D496C3D16E463C2004FEE96 /* JRShortcutControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D496C3C16E463C2004FEE96 /* JRShortcutControl.m */; };
 		3D51176D16D55D740012C9C0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51176C16D55D740012C9C0 /* Cocoa.framework */; };
 		3D51177716D55D740012C9C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D51177516D55D740012C9C0 /* InfoPlist.strings */; };
 		3D51177916D55D740012C9C0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D51177816D55D740012C9C0 /* main.m */; };
 		3D51177D16D55D740012C9C0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3D51177B16D55D740012C9C0 /* Credits.rtf */; };
 		3D51178016D55D740012C9C0 /* JRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D51177F16D55D740012C9C0 /* JRAppDelegate.m */; };
-		3D51178316D55D740012C9C0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D51178116D55D740012C9C0 /* MainMenu.xib */; };
 		3D51178616D55D740012C9C0 /* Assign.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D51178416D55D740012C9C0 /* Assign.xcdatamodeld */; };
 		3D51178E16D55D740012C9C0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51178D16D55D740012C9C0 /* SenTestingKit.framework */; };
 		3D51178F16D55D740012C9C0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51176C16D55D740012C9C0 /* Cocoa.framework */; };
 		3D51179716D55D740012C9C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D51179516D55D740012C9C0 /* InfoPlist.strings */; };
 		3D51179A16D55D740012C9C0 /* AssignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D51179916D55D740012C9C0 /* AssignTests.m */; };
-		3D5117A216D55D740012C9C0 /* AssignImporter.mdimporter in Resources */ = {isa = PBXBuildFile; fileRef = 3D51179F16D55D740012C9C0 /* AssignImporter.mdimporter */; };
-		3D5117A416D55D740012C9C0 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5117A316D55D740012C9C0 /* CoreServices.framework */; };
-		3D5117A616D55D740012C9C0 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5117A516D55D740012C9C0 /* CoreFoundation.framework */; };
-		3D5117A816D55D740012C9C0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5117A716D55D740012C9C0 /* CoreData.framework */; };
-		3D5117AA16D55D750012C9C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5117A916D55D740012C9C0 /* Foundation.framework */; };
-		3D5117B016D55D750012C9C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D5117AE16D55D750012C9C0 /* InfoPlist.strings */; };
-		3D5117B216D55D750012C9C0 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 3D5117B116D55D750012C9C0 /* main.c */; };
-		3D5117B416D55D750012C9C0 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5117B316D55D750012C9C0 /* GetMetadataForFile.m */; };
-		3D5117B716D55D750012C9C0 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5117B616D55D750012C9C0 /* MySpotlightImporter.m */; };
+		3D7520B516E7CC1400AF1C00 /* JRKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7520B416E7CC1400AF1C00 /* JRKeyCombo.m */; };
+		3D7C0F5616F7EDE500AAFD67 /* JRDropdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C0F5516F7EDE500AAFD67 /* JRDropdownButton.m */; };
+		3D7EEE2D16DC4A1A00B57AB6 /* JRStatusItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EEE2C16DC4A1A00B57AB6 /* JRStatusItem.m */; };
+		3D7EEE3016DC5ADD00B57AB6 /* JRFolderCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EEE2F16DC5ADD00B57AB6 /* JRFolderCollection.m */; };
+		3D7EEE3316DC6A5C00B57AB6 /* JRAssignURLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EEE3216DC6A5C00B57AB6 /* JRAssignURLView.m */; };
+		3D7F6B8516E199700005F06D /* assign-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F6B8416E199700005F06D /* assign-icon.png */; };
+		3D7F6B8D16E1A04D0005F06D /* assign-icon-menubar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F6B8C16E1A04D0005F06D /* assign-icon-menubar.png */; };
+		3D7F6B8F16E1B5B10005F06D /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F6B8E16E1B5B10005F06D /* Preferences.xib */; };
+		3D80D82B16E56A5900F4BA57 /* JRPreferencesPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D80D82A16E56A5900F4BA57 /* JRPreferencesPanel.m */; };
+		3D9B3DE216D978D700796EDA /* JRAssignWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B3DE116D978D700796EDA /* JRAssignWindow.m */; };
+		3DA9447316E0052F009ECCD2 /* JRURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9447216E0052F009ECCD2 /* JRURL.m */; };
+		3DA9447616E04B99009ECCD2 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA9447516E04B99009ECCD2 /* Carbon.framework */; };
+		3DEB233116E06D1500AE2D70 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB233016E06D1500AE2D70 /* ScriptingBridge.framework */; };
+		3DEB233716E0987700AE2D70 /* JRAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB233616E0987700AE2D70 /* JRAttributedString.m */; };
+		3DED243616DF01460021FE74 /* JRAssignView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED243516DF01460021FE74 /* JRAssignView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +47,19 @@
 			remoteGlobalIDString = 3D51176716D55D730012C9C0;
 			remoteInfo = Assign;
 		};
-		3D5117A016D55D740012C9C0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D51175F16D55D730012C9C0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3D51179E16D55D740012C9C0;
-			remoteInfo = AssignImporter;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D01D10216F550A40031F2B5 /* JRAssignWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAssignWindowController.h; sourceTree = "<group>"; };
+		3D01D10316F550A40031F2B5 /* JRAssignWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAssignWindowController.m; sourceTree = "<group>"; };
+		3D01D10916F55F9A0031F2B5 /* JRIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRIconView.h; sourceTree = "<group>"; };
+		3D01D10A16F55F9A0031F2B5 /* JRIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRIconView.m; sourceTree = "<group>"; };
+		3D39C51816D5E65600A81878 /* JRMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRMenu.h; sourceTree = "<group>"; };
+		3D39C51916D5E65600A81878 /* JRMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRMenu.m; sourceTree = "<group>"; };
+		3D3AA3E216E2C722007E3604 /* JRPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRPreferencesController.h; sourceTree = "<group>"; };
+		3D3AA3E316E2C722007E3604 /* JRPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRPreferencesController.m; sourceTree = "<group>"; };
+		3D496C3B16E463C2004FEE96 /* JRShortcutControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRShortcutControl.h; sourceTree = "<group>"; };
+		3D496C3C16E463C2004FEE96 /* JRShortcutControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRShortcutControl.m; sourceTree = "<group>"; };
 		3D51176816D55D740012C9C0 /* Assign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D51176C16D55D740012C9C0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3D51176F16D55D740012C9C0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -59,7 +72,6 @@
 		3D51177C16D55D740012C9C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		3D51177E16D55D740012C9C0 /* JRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRAppDelegate.h; sourceTree = "<group>"; };
 		3D51177F16D55D740012C9C0 /* JRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRAppDelegate.m; sourceTree = "<group>"; };
-		3D51178216D55D740012C9C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3D51178516D55D740012C9C0 /* Assign.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Assign.xcdatamodel; sourceTree = "<group>"; };
 		3D51178C16D55D740012C9C0 /* AssignTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D51178D16D55D740012C9C0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -67,19 +79,36 @@
 		3D51179616D55D740012C9C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3D51179816D55D740012C9C0 /* AssignTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssignTests.h; sourceTree = "<group>"; };
 		3D51179916D55D740012C9C0 /* AssignTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssignTests.m; sourceTree = "<group>"; };
-		3D51179F16D55D740012C9C0 /* AssignImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5117A316D55D740012C9C0 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		3D5117A516D55D740012C9C0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		3D5117A716D55D740012C9C0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3D5117A916D55D740012C9C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		3D5117AD16D55D750012C9C0 /* AssignImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AssignImporter-Info.plist"; sourceTree = "<group>"; };
-		3D5117AF16D55D750012C9C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3D5117B116D55D750012C9C0 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		3D5117B316D55D750012C9C0 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
-		3D5117B516D55D750012C9C0 /* MySpotlightImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySpotlightImporter.h; sourceTree = "<group>"; };
-		3D5117B616D55D750012C9C0 /* MySpotlightImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySpotlightImporter.m; sourceTree = "<group>"; };
-		3D5117B816D55D750012C9C0 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
-		3D5117B916D55D750012C9C0 /* AssignImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AssignImporter-Prefix.pch"; sourceTree = "<group>"; };
+		3D7520B316E7CC1400AF1C00 /* JRKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRKeyCombo.h; sourceTree = "<group>"; };
+		3D7520B416E7CC1400AF1C00 /* JRKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRKeyCombo.m; sourceTree = "<group>"; };
+		3D7C0F5416F7EDE500AAFD67 /* JRDropdownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRDropdownButton.h; sourceTree = "<group>"; };
+		3D7C0F5516F7EDE500AAFD67 /* JRDropdownButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRDropdownButton.m; sourceTree = "<group>"; };
+		3D7EEE2B16DC4A1A00B57AB6 /* JRStatusItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRStatusItem.h; path = ../JRStatusItem.h; sourceTree = "<group>"; };
+		3D7EEE2C16DC4A1A00B57AB6 /* JRStatusItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRStatusItem.m; path = ../JRStatusItem.m; sourceTree = "<group>"; };
+		3D7EEE2E16DC5ADD00B57AB6 /* JRFolderCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRFolderCollection.h; sourceTree = "<group>"; };
+		3D7EEE2F16DC5ADD00B57AB6 /* JRFolderCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRFolderCollection.m; sourceTree = "<group>"; };
+		3D7EEE3116DC6A5C00B57AB6 /* JRAssignURLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAssignURLView.h; sourceTree = "<group>"; };
+		3D7EEE3216DC6A5C00B57AB6 /* JRAssignURLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAssignURLView.m; sourceTree = "<group>"; };
+		3D7F6B8316E1980B0005F06D /* Finder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Finder.h; path = ../Finder.h; sourceTree = "<group>"; };
+		3D7F6B8416E199700005F06D /* assign-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assign-icon.png"; sourceTree = "<group>"; };
+		3D7F6B8C16E1A04D0005F06D /* assign-icon-menubar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assign-icon-menubar.png"; sourceTree = "<group>"; };
+		3D7F6B8E16E1B5B10005F06D /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		3D80D82916E56A5900F4BA57 /* JRPreferencesPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRPreferencesPanel.h; sourceTree = "<group>"; };
+		3D80D82A16E56A5900F4BA57 /* JRPreferencesPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRPreferencesPanel.m; sourceTree = "<group>"; };
+		3D9B3DE016D978D700796EDA /* JRAssignWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAssignWindow.h; sourceTree = "<group>"; };
+		3D9B3DE116D978D700796EDA /* JRAssignWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAssignWindow.m; sourceTree = "<group>"; };
+		3DA9447116E0052F009ECCD2 /* JRURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRURL.h; sourceTree = "<group>"; };
+		3DA9447216E0052F009ECCD2 /* JRURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRURL.m; sourceTree = "<group>"; };
+		3DA9447516E04B99009ECCD2 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		3DEB233016E06D1500AE2D70 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		3DEB233516E0987700AE2D70 /* JRAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAttributedString.h; sourceTree = "<group>"; };
+		3DEB233616E0987700AE2D70 /* JRAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAttributedString.m; sourceTree = "<group>"; };
+		3DED243416DF01460021FE74 /* JRAssignView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAssignView.h; sourceTree = "<group>"; };
+		3DED243516DF01460021FE74 /* JRAssignView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAssignView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DEB233116E06D1500AE2D70 /* ScriptingBridge.framework in Frameworks */,
+				3DA9447616E04B99009ECCD2 /* Carbon.framework in Frameworks */,
 				3D51176D16D55D740012C9C0 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,26 +131,84 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D51179C16D55D740012C9C0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D5117A416D55D740012C9C0 /* CoreServices.framework in Frameworks */,
-				3D5117A616D55D740012C9C0 /* CoreFoundation.framework in Frameworks */,
-				3D5117A816D55D740012C9C0 /* CoreData.framework in Frameworks */,
-				3D5117AA16D55D750012C9C0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D01D10616F55E360031F2B5 /* Assign */ = {
+			isa = PBXGroup;
+			children = (
+				3D9B3DE016D978D700796EDA /* JRAssignWindow.h */,
+				3D9B3DE116D978D700796EDA /* JRAssignWindow.m */,
+				3DED243416DF01460021FE74 /* JRAssignView.h */,
+				3DED243516DF01460021FE74 /* JRAssignView.m */,
+				3D7EEE3116DC6A5C00B57AB6 /* JRAssignURLView.h */,
+				3D7EEE3216DC6A5C00B57AB6 /* JRAssignURLView.m */,
+				3DEB233516E0987700AE2D70 /* JRAttributedString.h */,
+				3DEB233616E0987700AE2D70 /* JRAttributedString.m */,
+				3D01D10916F55F9A0031F2B5 /* JRIconView.h */,
+				3D01D10A16F55F9A0031F2B5 /* JRIconView.m */,
+				3D7C0F5416F7EDE500AAFD67 /* JRDropdownButton.h */,
+				3D7C0F5516F7EDE500AAFD67 /* JRDropdownButton.m */,
+			);
+			name = Assign;
+			sourceTree = "<group>";
+		};
+		3D01D10716F55E470031F2B5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				3D39C51816D5E65600A81878 /* JRMenu.h */,
+				3D39C51916D5E65600A81878 /* JRMenu.m */,
+				3D7EEE2B16DC4A1A00B57AB6 /* JRStatusItem.h */,
+				3D7EEE2C16DC4A1A00B57AB6 /* JRStatusItem.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		3D01D10816F55E670031F2B5 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				3D80D82916E56A5900F4BA57 /* JRPreferencesPanel.h */,
+				3D80D82A16E56A5900F4BA57 /* JRPreferencesPanel.m */,
+				3D496C3B16E463C2004FEE96 /* JRShortcutControl.h */,
+				3D496C3C16E463C2004FEE96 /* JRShortcutControl.m */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		3D3AA3F216E2D846007E3604 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D3AA3F316E2D85B007E3604 /* Images */,
+				3D51178416D55D740012C9C0 /* Assign.xcdatamodeld */,
+				3D7F6B8316E1980B0005F06D /* Finder.h */,
+				3D51177416D55D740012C9C0 /* Assign-Info.plist */,
+				3D51177516D55D740012C9C0 /* InfoPlist.strings */,
+				3D51177816D55D740012C9C0 /* main.m */,
+				3D51177A16D55D740012C9C0 /* Assign-Prefix.pch */,
+				3D51177B16D55D740012C9C0 /* Credits.rtf */,
+			);
+			name = Resources;
+			path = Assign;
+			sourceTree = "<group>";
+		};
+		3D3AA3F316E2D85B007E3604 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3D7F6B8C16E1A04D0005F06D /* assign-icon-menubar.png */,
+				3D7F6B8416E199700005F06D /* assign-icon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		3D51175D16D55D730012C9C0 = {
 			isa = PBXGroup;
 			children = (
-				3D51177216D55D740012C9C0 /* Assign */,
+				3D7F6BA616E1B9C90005F06D /* nib files */,
+				3D9B3DE816D9B8A500796EDA /* Models */,
+				3D9B3DE416D9B4C000796EDA /* Views */,
+				3D9B3DEC16D9F03700796EDA /* Controllers */,
+				3D3AA3F216E2D846007E3604 /* Resources */,
 				3D51179216D55D740012C9C0 /* AssignTests */,
-				3D5117AB16D55D750012C9C0 /* AssignImporter */,
 				3D51176B16D55D740012C9C0 /* Frameworks */,
 				3D51176916D55D740012C9C0 /* Products */,
 			);
@@ -130,7 +219,6 @@
 			children = (
 				3D51176816D55D740012C9C0 /* Assign.app */,
 				3D51178C16D55D740012C9C0 /* AssignTests.octest */,
-				3D51179F16D55D740012C9C0 /* AssignImporter.mdimporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +226,8 @@
 		3D51176B16D55D740012C9C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3DEB233016E06D1500AE2D70 /* ScriptingBridge.framework */,
+				3DA9447516E04B99009ECCD2 /* Carbon.framework */,
 				3D51176C16D55D740012C9C0 /* Cocoa.framework */,
 				3D51178D16D55D740012C9C0 /* SenTestingKit.framework */,
 				3D5117A316D55D740012C9C0 /* CoreServices.framework */,
@@ -159,30 +249,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		3D51177216D55D740012C9C0 /* Assign */ = {
-			isa = PBXGroup;
-			children = (
-				3D51177E16D55D740012C9C0 /* JRAppDelegate.h */,
-				3D51177F16D55D740012C9C0 /* JRAppDelegate.m */,
-				3D51178116D55D740012C9C0 /* MainMenu.xib */,
-				3D51178416D55D740012C9C0 /* Assign.xcdatamodeld */,
-				3D51177316D55D740012C9C0 /* Supporting Files */,
-			);
-			path = Assign;
-			sourceTree = "<group>";
-		};
-		3D51177316D55D740012C9C0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3D51177416D55D740012C9C0 /* Assign-Info.plist */,
-				3D51177516D55D740012C9C0 /* InfoPlist.strings */,
-				3D51177816D55D740012C9C0 /* main.m */,
-				3D51177A16D55D740012C9C0 /* Assign-Prefix.pch */,
-				3D51177B16D55D740012C9C0 /* Credits.rtf */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		3D51179216D55D740012C9C0 /* AssignTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,27 +268,52 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3D5117AB16D55D750012C9C0 /* AssignImporter */ = {
+		3D7F6BA616E1B9C90005F06D /* nib files */ = {
 			isa = PBXGroup;
 			children = (
-				3D5117B316D55D750012C9C0 /* GetMetadataForFile.m */,
-				3D5117B516D55D750012C9C0 /* MySpotlightImporter.h */,
-				3D5117B616D55D750012C9C0 /* MySpotlightImporter.m */,
-				3D5117B816D55D750012C9C0 /* Importer Read Me.txt */,
-				3D5117AC16D55D750012C9C0 /* Supporting Files */,
+				3D7F6B8E16E1B5B10005F06D /* Preferences.xib */,
 			);
-			path = AssignImporter;
+			name = "nib files";
+			path = Assign;
 			sourceTree = "<group>";
 		};
-		3D5117AC16D55D750012C9C0 /* Supporting Files */ = {
+		3D9B3DE416D9B4C000796EDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3D5117AD16D55D750012C9C0 /* AssignImporter-Info.plist */,
-				3D5117AE16D55D750012C9C0 /* InfoPlist.strings */,
-				3D5117B116D55D750012C9C0 /* main.c */,
-				3D5117B916D55D750012C9C0 /* AssignImporter-Prefix.pch */,
+				3D01D10716F55E470031F2B5 /* Application */,
+				3D01D10616F55E360031F2B5 /* Assign */,
+				3D01D10816F55E670031F2B5 /* Preferences */,
 			);
-			name = "Supporting Files";
+			name = Views;
+			path = Assign;
+			sourceTree = "<group>";
+		};
+		3D9B3DE816D9B8A500796EDA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D7EEE2E16DC5ADD00B57AB6 /* JRFolderCollection.h */,
+				3D7EEE2F16DC5ADD00B57AB6 /* JRFolderCollection.m */,
+				3DA9447116E0052F009ECCD2 /* JRURL.h */,
+				3DA9447216E0052F009ECCD2 /* JRURL.m */,
+				3D7520B316E7CC1400AF1C00 /* JRKeyCombo.h */,
+				3D7520B416E7CC1400AF1C00 /* JRKeyCombo.m */,
+			);
+			name = Models;
+			path = Assign;
+			sourceTree = "<group>";
+		};
+		3D9B3DEC16D9F03700796EDA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D51177E16D55D740012C9C0 /* JRAppDelegate.h */,
+				3D51177F16D55D740012C9C0 /* JRAppDelegate.m */,
+				3D3AA3E216E2C722007E3604 /* JRPreferencesController.h */,
+				3D3AA3E316E2C722007E3604 /* JRPreferencesController.m */,
+				3D01D10216F550A40031F2B5 /* JRAssignWindowController.h */,
+				3D01D10316F550A40031F2B5 /* JRAssignWindowController.m */,
+			);
+			name = Controllers;
+			path = Assign;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +330,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				3D5117A116D55D740012C9C0 /* PBXTargetDependency */,
 			);
 			name = Assign;
 			productName = Assign;
@@ -263,23 +353,6 @@
 			name = AssignTests;
 			productName = AssignTests;
 			productReference = 3D51178C16D55D740012C9C0 /* AssignTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
-		3D51179E16D55D740012C9C0 /* AssignImporter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3D5117BC16D55D750012C9C0 /* Build configuration list for PBXNativeTarget "AssignImporter" */;
-			buildPhases = (
-				3D51179B16D55D740012C9C0 /* Sources */,
-				3D51179C16D55D740012C9C0 /* Frameworks */,
-				3D51179D16D55D740012C9C0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AssignImporter;
-			productName = AssignImporter;
-			productReference = 3D51179F16D55D740012C9C0 /* AssignImporter.mdimporter */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -306,7 +379,6 @@
 			targets = (
 				3D51176716D55D730012C9C0 /* Assign */,
 				3D51178B16D55D740012C9C0 /* AssignTests */,
-				3D51179E16D55D740012C9C0 /* AssignImporter */,
 			);
 		};
 /* End PBXProject section */
@@ -318,8 +390,9 @@
 			files = (
 				3D51177716D55D740012C9C0 /* InfoPlist.strings in Resources */,
 				3D51177D16D55D740012C9C0 /* Credits.rtf in Resources */,
-				3D51178316D55D740012C9C0 /* MainMenu.xib in Resources */,
-				3D5117A216D55D740012C9C0 /* AssignImporter.mdimporter in Resources */,
+				3D7F6B8516E199700005F06D /* assign-icon.png in Resources */,
+				3D7F6B8D16E1A04D0005F06D /* assign-icon-menubar.png in Resources */,
+				3D7F6B8F16E1B5B10005F06D /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,14 +401,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D51179716D55D740012C9C0 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D51179D16D55D740012C9C0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D5117B016D55D750012C9C0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +430,21 @@
 				3D51177916D55D740012C9C0 /* main.m in Sources */,
 				3D51178016D55D740012C9C0 /* JRAppDelegate.m in Sources */,
 				3D51178616D55D740012C9C0 /* Assign.xcdatamodeld in Sources */,
+				3D39C51A16D5E65600A81878 /* JRMenu.m in Sources */,
+				3D9B3DE216D978D700796EDA /* JRAssignWindow.m in Sources */,
+				3D7EEE2D16DC4A1A00B57AB6 /* JRStatusItem.m in Sources */,
+				3D7EEE3016DC5ADD00B57AB6 /* JRFolderCollection.m in Sources */,
+				3D7EEE3316DC6A5C00B57AB6 /* JRAssignURLView.m in Sources */,
+				3DED243616DF01460021FE74 /* JRAssignView.m in Sources */,
+				3DA9447316E0052F009ECCD2 /* JRURL.m in Sources */,
+				3DEB233716E0987700AE2D70 /* JRAttributedString.m in Sources */,
+				3D3AA3E416E2C722007E3604 /* JRPreferencesController.m in Sources */,
+				3D496C3D16E463C2004FEE96 /* JRShortcutControl.m in Sources */,
+				3D80D82B16E56A5900F4BA57 /* JRPreferencesPanel.m in Sources */,
+				3D7520B516E7CC1400AF1C00 /* JRKeyCombo.m in Sources */,
+				3D01D10416F550A40031F2B5 /* JRAssignWindowController.m in Sources */,
+				3D01D10B16F55F9A0031F2B5 /* JRIconView.m in Sources */,
+				3D7C0F5616F7EDE500AAFD67 /* JRDropdownButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,16 +456,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D51179B16D55D740012C9C0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D5117B216D55D750012C9C0 /* main.c in Sources */,
-				3D5117B416D55D750012C9C0 /* GetMetadataForFile.m in Sources */,
-				3D5117B716D55D750012C9C0 /* MySpotlightImporter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -393,11 +463,6 @@
 			isa = PBXTargetDependency;
 			target = 3D51176716D55D730012C9C0 /* Assign */;
 			targetProxy = 3D51179016D55D740012C9C0 /* PBXContainerItemProxy */;
-		};
-		3D5117A116D55D740012C9C0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3D51179E16D55D740012C9C0 /* AssignImporter */;
-			targetProxy = 3D5117A016D55D740012C9C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -418,26 +483,10 @@
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		3D51178116D55D740012C9C0 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D51178216D55D740012C9C0 /* en */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 		3D51179516D55D740012C9C0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3D51179616D55D740012C9C0 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		3D5117AE16D55D750012C9C0 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D5117AF16D55D750012C9C0 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -498,45 +547,19 @@
 			};
 			name = Release;
 		};
-		3D5117BD16D55D750012C9C0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AssignImporter/AssignImporter-Prefix.pch";
-				INFOPLIST_FILE = "AssignImporter/AssignImporter-Info.plist";
-				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
-				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = mdimporter;
-			};
-			name = Debug;
-		};
-		3D5117BE16D55D750012C9C0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AssignImporter/AssignImporter-Prefix.pch";
-				INFOPLIST_FILE = "AssignImporter/AssignImporter-Info.plist";
-				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
-				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = mdimporter;
-			};
-			name = Release;
-		};
 		3D5117C016D55D750012C9C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Assign/Assign-Prefix.pch";
 				INFOPLIST_FILE = "Assign/Assign-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "\"@loader_path/../Frameworks\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -546,9 +569,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Assign/Assign-Prefix.pch";
 				INFOPLIST_FILE = "Assign/Assign-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "\"@loader_path/../Frameworks\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -559,7 +588,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Assign.app/Contents/MacOS/Assign";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Assign/Assign-Prefix.pch";
 				INFOPLIST_FILE = "AssignTests/AssignTests-Info.plist";
@@ -574,7 +606,10 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Assign.app/Contents/MacOS/Assign";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Assign/Assign-Prefix.pch";
 				INFOPLIST_FILE = "AssignTests/AssignTests-Info.plist";
@@ -596,14 +631,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D5117BC16D55D750012C9C0 /* Build configuration list for PBXNativeTarget "AssignImporter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3D5117BD16D55D750012C9C0 /* Debug */,
-				3D5117BE16D55D750012C9C0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		3D5117BF16D55D750012C9C0 /* Build configuration list for PBXNativeTarget "Assign" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -611,6 +638,7 @@
 				3D5117C116D55D750012C9C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D5117C216D55D750012C9C0 /* Build configuration list for PBXNativeTarget "AssignTests" */ = {
 			isa = XCConfigurationList;
@@ -619,6 +647,7 @@
 				3D5117C416D55D750012C9C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
