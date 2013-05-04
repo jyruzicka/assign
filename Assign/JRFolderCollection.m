@@ -28,7 +28,7 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 
 -(id)initWithDictionary:(NSDictionary *)d {
     if (self = [super init]) {
-        [self setRootFolder:[NSURL fileURLWithPath:(NSString*)d[@"rootFolder"]]];
+        self.rootFolder = [NSURL fileURLWithPath:(NSString*)d[@"rootFolder"]];
 
         int keyCode = [(NSNumber*)d[@"keyCode"] intValue];
         NSString *character = (NSString *)d[@"character"];
@@ -39,7 +39,6 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
             [self registerHotkey:kc];
         }
         
-        [self backgroundScanForFolders];
     }
     return self;
 }
@@ -52,10 +51,8 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 -(id)initWithURL:(NSURL *)url
 {
     if (self = [super init])
-    {
-        [self setRootFolder:url];
-        [self backgroundScanForFolders];
-    }
+        self.rootFolder = url; // Auto-initiate scan
+
     return self;
 }
 
@@ -101,7 +98,11 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
     };
 }
 
-#pragma mark -
+#pragma mark FolderCollection methods
+-(void)setRootFolder:(NSURL *)rootFolder {
+    _rootFolder = rootFolder;
+    [self backgroundScanForFolders];
+}
 
 -(void)backgroundScanForFolders {
     NSThread *scanThread = [[NSThread alloc] initWithTarget:self selector:@selector(scanForFolders) object:nil];
