@@ -112,6 +112,8 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 -(void)scanForFolders
 {
     if (self.rootFolder) {
+        JRAppDelegate *delegate = (JRAppDelegate *)[NSApp delegate];
+        [delegate increaseScansInProgress];
         // We will store our new collection in here, then swap them over at the end.
         NSMutableArray *newCollection = [NSMutableArray array];
     
@@ -128,6 +130,7 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
         }
         self.folders = newCollection;
         DLog(@"%lu folders", [self.folders count]);
+        [delegate decreaseScansInProgress];
     }
 
 }

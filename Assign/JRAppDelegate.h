@@ -17,11 +17,15 @@
     JRAssignWindowController *assign;
     JRPreferencesController *preferences;
     NSUserDefaults *defaults;
+    int scansInProgress;
 }
 
 @property JRStatusItem *statusItem;
 @property NSMutableArray *folderCollections;
-@property BOOL themeIsLight;
+
+#pragma mark Scan-related activities
+-(void)increaseScansInProgress;
+-(void)decreaseScansInProgress;
 
 #pragma mark Defaults-related activities
 -(void)saveFolderCollectionsToDefaults;

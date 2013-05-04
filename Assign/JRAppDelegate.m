@@ -27,14 +27,25 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     defaults = [NSUserDefaults standardUserDefaults];
-    [self loadFolderCollectionsFromDefaults];
     self.statusItem = [[JRStatusItem alloc] init];
+    [self loadFolderCollectionsFromDefaults];
 }
 
 //Runs when it loses focus
 -(void)applicationDidResignActive:(NSNotification *)notification {
     [self disappearAssignWindow:notification];
     DLog(@"Lost focus");
+}
+
+#pragma mark Scan-related activities
+-(void)increaseScansInProgress {
+    scansInProgress++;
+    if (scansInProgress == 1) [self.statusItem startScanning];
+}
+
+-(void)decreaseScansInProgress {
+    scansInProgress--;
+    if (scansInProgress == 0) [self.statusItem stopScanning];
 }
 
 #pragma mark -

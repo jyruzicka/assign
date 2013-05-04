@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Carbon/Carbon.h>
-@class JRURL;
-@class JRKeyCombo;
+@class JRURL, JRKeyCombo;
 
 @interface JRFolderCollection : NSObject {}
 @property (nonatomic) NSURL *rootFolder;

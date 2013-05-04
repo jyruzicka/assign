@@ -22,6 +22,7 @@
 		3D51178F16D55D740012C9C0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D51176C16D55D740012C9C0 /* Cocoa.framework */; };
 		3D51179716D55D740012C9C0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D51179516D55D740012C9C0 /* InfoPlist.strings */; };
 		3D51179A16D55D740012C9C0 /* AssignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D51179916D55D740012C9C0 /* AssignTests.m */; };
+		3D67200B17352C8300F27127 /* assign-icon-menubar-scanning.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D67200A17352C8300F27127 /* assign-icon-menubar-scanning.png */; };
 		3D7520B516E7CC1400AF1C00 /* JRKeyCombo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7520B416E7CC1400AF1C00 /* JRKeyCombo.m */; };
 		3D7C0F5616F7EDE500AAFD67 /* JRDropdownButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7C0F5516F7EDE500AAFD67 /* JRDropdownButton.m */; };
 		3D7EEE2D16DC4A1A00B57AB6 /* JRStatusItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7EEE2C16DC4A1A00B57AB6 /* JRStatusItem.m */; };
@@ -83,6 +84,7 @@
 		3D5117A516D55D740012C9C0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		3D5117A716D55D740012C9C0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3D5117A916D55D740012C9C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3D67200A17352C8300F27127 /* assign-icon-menubar-scanning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assign-icon-menubar-scanning.png"; sourceTree = "<group>"; };
 		3D7520B316E7CC1400AF1C00 /* JRKeyCombo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRKeyCombo.h; sourceTree = "<group>"; };
 		3D7520B416E7CC1400AF1C00 /* JRKeyCombo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRKeyCombo.m; sourceTree = "<group>"; };
 		3D7C0F5416F7EDE500AAFD67 /* JRDropdownButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRDropdownButton.h; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		3D3AA3F316E2D85B007E3604 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3D67200A17352C8300F27127 /* assign-icon-menubar-scanning.png */,
 				3D7F6B8C16E1A04D0005F06D /* assign-icon-menubar.png */,
 				3D7F6B8416E199700005F06D /* assign-icon.png */,
 			);
@@ -393,6 +396,7 @@
 				3D7F6B8516E199700005F06D /* assign-icon.png in Resources */,
 				3D7F6B8D16E1A04D0005F06D /* assign-icon-menubar.png in Resources */,
 				3D7F6B8F16E1B5B10005F06D /* Preferences.xib in Resources */,
+				3D67200B17352C8300F27127 /* assign-icon-menubar-scanning.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

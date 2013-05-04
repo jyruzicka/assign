@@ -14,4 +14,8 @@
 
 -(id)init;
 
+#pragma mark Setting the icon
+-(void)startScanning;
+-(void)stopScanning;
+
 @end
