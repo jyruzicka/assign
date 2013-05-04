@@ -28,7 +28,6 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 
 -(id)initWithDictionary:(NSDictionary *)d {
     if (self = [super init]) {
-        self.folders = [NSMutableArray array];
         [self setRootFolder:[NSURL fileURLWithPath:(NSString*)d[@"rootFolder"]]];
 
         int keyCode = [(NSNumber*)d[@"keyCode"] intValue];
@@ -39,6 +38,8 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
             JRKeyCombo *kc = [JRKeyCombo keyComboWithIntKeyCode:keyCode character:character modifierFlags:modifierFlags];
             [self registerHotkey:kc];
         }
+        
+        [self scanForFolders];
     }
     return self;
 }
@@ -52,8 +53,8 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 {
     if (self = [super init])
     {
-        self.folders = [NSMutableArray array];
         [self setRootFolder:url];
+        [self scanForFolders];
     }
     return self;
 }
@@ -64,6 +65,7 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
     JRKeyCombo *kc = [JRKeyCombo keyComboWithKeyCode:49 character:@" " modifierFlags:NSCommandKeyMask+NSControlKeyMask];
     JRFolderCollection *fc = [self folderCollectionWithURL:rootFolder];
     [fc registerHotkey:kc];
+    
     return fc;
 }
 
@@ -100,11 +102,6 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 }
 
 #pragma mark -
-
--(void)setRootFolder:(NSURL *)rf {
-    _rootFolder = rf;
-    [self scanForFolders];
-}
 
 -(void)scanForFolders
 {

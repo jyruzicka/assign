@@ -30,7 +30,6 @@
 -(NSDictionary *)toDictionary;
 
 #pragma mark Other methods
--(void)setRootFolder:(NSURL *)rootFolder;
 -(void)scanForFolders;
 -(NSArray *) urlsFilteredByString:(NSString *)str;
 
