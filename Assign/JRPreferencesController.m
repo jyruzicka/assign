@@ -91,7 +91,6 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
 
 -(IBAction)rescanPopUpClicked:(id)sender {
     [self.targetCollection setRescanInterval:(int)[(NSPopUpButton *) sender selectedTag]];
-    [delegate folderCollectionsDidChange];
 }
 
 -(IBAction)rescanButtonClicked:(id)sender {
@@ -105,7 +104,6 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
  * and need to save + refresh the window.
  */
 -(void)saveAndRefreshPreferences {
-    [delegate folderCollectionsDidChange];
     [collectionTableView reloadData];
 }
 

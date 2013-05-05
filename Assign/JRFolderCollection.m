@@ -52,8 +52,10 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
 
 -(id)initWithURL:(NSURL *)url
 {
-    if (self = [super init])
+    if (self = [super init]) {
         self.rootFolder = url; // Auto-initiate scan
+        [self save];
+    }
 
     return self;
 }
@@ -101,15 +103,21 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
     };
 }
 
+-(void)save {
+    [(JRAppDelegate *)[NSApp delegate] saveFolderCollections];
+}
+
 #pragma mark Setters
 -(void)setRootFolder:(NSURL *)rootFolder {
     _rootFolder = rootFolder;
     [self backgroundScanForFolders];
+    [self save];
 }
 
 -(void)setRescanInterval:(int)rescanInterval {
     if (rescanInterval != _rescanInterval) {
         _rescanInterval = rescanInterval;
+        [self save];
         
         if (self.timer) {
             [self.timer invalidate];
@@ -212,6 +220,7 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
     
     //And finally, set our keyCombo appropriately
     self.keyCombo = hotKey;
+    [self save];
 }
 
 -(void)deregisterHotkey {
@@ -219,6 +228,7 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
     if (hk != nil) {
         UnregisterEventHotKey(hk);
         [self setRegisteredHotkey:nil];
+        [self save];
     }
 }
 @end

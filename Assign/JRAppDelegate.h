@@ -28,8 +28,7 @@
 -(void)decreaseScansInProgress;
 
 #pragma mark Defaults-related activities
-//Call this whenever you change the folderCollections array
--(void)folderCollectionsDidChange;
+-(void)saveFolderCollections;
 
 //Theme virtual setter/getter
 -(NSString *)theme;

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Carbon/Carbon.h>
-@class JRURL, JRKeyCombo;
+@class JRURL, JRKeyCombo, JRAppDelegate;
 
 @interface JRFolderCollection : NSObject {
     NSThread *scanningThread;
@@ -29,8 +29,9 @@
 
 +(id)defaultFolderCollection;
 
-#pragma mark Exporter
+#pragma mark Exporter etc.
 -(NSDictionary *)toDictionary;
+-(void)save;
 
 #pragma mark Setters
 -(void)setRootFolder:(NSURL *)rootFolder;

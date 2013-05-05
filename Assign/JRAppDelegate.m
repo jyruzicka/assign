@@ -58,8 +58,7 @@
 
 #pragma mark -
 
-//Call this whenever you change the folderCollections array
--(void)folderCollectionsDidChange {
+-(void)saveFolderCollections {
     // Save to defaults
     NSMutableArray *dicts = [NSMutableArray array];
     for (JRFolderCollection *fc in [self folderCollections])
@@ -86,7 +85,7 @@
     }
     else // Make defaults
         [self.folderCollections addObject: [JRFolderCollection defaultFolderCollection]];
-    [self folderCollectionsDidChange];
+    [self saveFolderCollections];
 }
 
 // Virtual getter/setter for defaults
@@ -125,7 +124,6 @@
         assign = nil;
     }
 }
-
 
 -(IBAction)displayPreferences:(id)sender {
     if (preferences == nil) preferences = [[JRPreferencesController alloc]init];
