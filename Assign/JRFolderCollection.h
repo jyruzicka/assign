@@ -17,7 +17,8 @@
 @property (nonatomic) NSMutableArray *folders;
 @property (nonatomic) NSValue *registeredHotkey;
 @property (nonatomic) JRKeyCombo *keyCombo;
-@property int rescanInterval;
+@property (nonatomic) int rescanInterval;
+@property (nonatomic) NSTimer *timer;
 
 #pragma mark Initializers and Factories
 +(id)folderCollectionWithDictionary:(NSDictionary *)d;
@@ -31,8 +32,12 @@
 #pragma mark Exporter
 -(NSDictionary *)toDictionary;
 
-#pragma mark Other methods
+#pragma mark Setters
 -(void)setRootFolder:(NSURL *)rootFolder;
+-(void)setRescanInterval:(int)rescanInterval;
+
+#pragma mark Other methods
+-(void)timerFireMethod:(NSTimer *)timer;
 -(void)backgroundScanForFolders;
 -(void)scanForFolders;
 -(NSArray *) urlsFilteredByString:(NSString *)str;

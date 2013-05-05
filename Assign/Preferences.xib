@@ -212,7 +212,6 @@
 							<string key="NSFrame">{{84, 18}, {108, 18}}</string>
 							<reference key="NSSuperview" ref="910161114"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="367771348">
@@ -615,18 +614,7 @@
 								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">400</int>
 								<int key="NSPeriodicInterval">75</int>
-								<object class="NSMenuItem" key="NSMenuItem" id="536891259">
-									<reference key="NSMenu" ref="212014080"/>
-									<string key="NSTitle">Every day</string>
-									<string key="NSKeyEquiv"/>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<int key="NSState">1</int>
-									<reference key="NSOnImage" ref="923653105"/>
-									<reference key="NSMixedImage" ref="614210417"/>
-									<string key="NSAction">_popUpItemAction:</string>
-									<int key="NSTag">86400</int>
-									<reference key="NSTarget" ref="764904475"/>
-								</object>
+								<nil key="NSMenuItem"/>
 								<bool key="NSMenuItemRespectAlignment">YES</bool>
 								<object class="NSMenu" key="NSMenu" id="212014080">
 									<string key="NSTitle">OtherViews</string>
@@ -690,11 +678,21 @@
 											<int key="NSTag">3600</int>
 											<reference key="NSTarget" ref="764904475"/>
 										</object>
-										<reference ref="536891259"/>
+										<object class="NSMenuItem" id="536891259">
+											<reference key="NSMenu" ref="212014080"/>
+											<string key="NSTitle">Every day</string>
+											<string key="NSKeyEquiv"/>
+											<int key="NSMnemonicLoc">2147483647</int>
+											<reference key="NSOnImage" ref="923653105"/>
+											<reference key="NSMixedImage" ref="614210417"/>
+											<string key="NSAction">_popUpItemAction:</string>
+											<int key="NSTag">86400</int>
+											<reference key="NSTarget" ref="764904475"/>
+										</object>
 									</array>
 									<reference key="NSMenuFont" ref="771642187"/>
 								</object>
-								<int key="NSSelectedIndex">5</int>
+								<int key="NSSelectedIndex">-1</int>
 								<int key="NSPreferredEdge">1</int>
 								<bool key="NSUsesItemFromMenu">YES</bool>
 								<bool key="NSAltersState">YES</bool>

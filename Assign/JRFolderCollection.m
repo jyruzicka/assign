@@ -39,6 +39,8 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
             [self registerHotkey:kc];
         }
         
+        self.rescanInterval = [(NSNumber *)d[@"rescanInterval"] intValue];
+        
     }
     return self;
 }
@@ -94,13 +96,34 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
              @"rootFolder":[[self rootFolder] path],
              @"keyCode": keyCode,
              @"character": character,
-             @"modifierFlags": modifierFlags
+             @"modifierFlags": modifierFlags,
+             @"rescanInterval": [NSNumber numberWithInt: self.rescanInterval]
     };
 }
 
-#pragma mark FolderCollection methods
+#pragma mark Setters
 -(void)setRootFolder:(NSURL *)rootFolder {
     _rootFolder = rootFolder;
+    [self backgroundScanForFolders];
+}
+
+-(void)setRescanInterval:(int)rescanInterval {
+    if (rescanInterval != _rescanInterval) {
+        _rescanInterval = rescanInterval;
+        
+        if (self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        
+        if (rescanInterval > 0) {
+            self.timer = [NSTimer timerWithTimeInterval:(float)rescanInterval target:self selector:@selector(timerFireMethod:) userInfo:nil repeats:YES];
+            [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
+        }
+    }
+}
+
+-(void)timerFireMethod:(NSTimer *)timer {
     [self backgroundScanForFolders];
 }
 

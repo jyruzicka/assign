@@ -91,6 +91,7 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
 
 -(IBAction)rescanPopUpClicked:(id)sender {
     [self.targetCollection setRescanInterval:(int)[(NSPopUpButton *) sender selectedTag]];
+    [delegate folderCollectionsDidChange];
 }
 
 -(IBAction)rescanButtonClicked:(id)sender {
@@ -203,12 +204,10 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
 
 #pragma mark Scanning
 -(void)startScanning {
-    DLog(@"StartScanning!");
     [rescanIndicator startAnimation:self];
 }
 
 -(void)stopScanning {
-    DLog(@"StopScanning!");
     [rescanIndicator stopAnimation:self];
 }
 
