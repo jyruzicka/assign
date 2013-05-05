@@ -17,6 +17,7 @@
 @property (nonatomic) NSMutableArray *folders;
 @property (nonatomic) NSValue *registeredHotkey;
 @property (nonatomic) JRKeyCombo *keyCombo;
+@property int rescanInterval;
 
 #pragma mark Initializers and Factories
 +(id)folderCollectionWithDictionary:(NSDictionary *)d;

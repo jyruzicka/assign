@@ -40,12 +40,20 @@
 #pragma mark Scan-related activities
 -(void)increaseScansInProgress {
     scansInProgress++;
-    if (scansInProgress == 1) [self.statusItem startScanning];
+    if (scansInProgress == 1){
+        [self.statusItem startScanning];
+        if (preferences)
+            [preferences startScanning];
+    }
 }
 
 -(void)decreaseScansInProgress {
     scansInProgress--;
-    if (scansInProgress == 0) [self.statusItem stopScanning];
+    if (scansInProgress == 0) {
+        [self.statusItem stopScanning];
+        if (preferences)
+            [preferences stopScanning];
+    }
 }
 
 #pragma mark -

@@ -137,10 +137,10 @@ OSStatus handleHotkey(EventHandlerCallRef nextHandler,EventRef theEvent,void *us
         if (![[NSThread currentThread] isCancelled]) {
             self.folders = newCollection;
             DLog(@"%lu folders", [self.folders count]);
-            [delegate decreaseScansInProgress];
             if (scanningThread == [NSThread currentThread])
                 scanningThread = nil;
         }
+        [delegate decreaseScansInProgress];
     }
 
 }

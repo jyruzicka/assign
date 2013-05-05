@@ -89,6 +89,14 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
     [delegate setTheme:[(NSPopUpButton *)sender titleOfSelectedItem]];
 }
 
+-(IBAction)rescanPopUpClicked:(id)sender {
+    [self.targetCollection setRescanInterval:(int)[(NSPopUpButton *) sender selectedTag]];
+}
+
+-(IBAction)rescanButtonClicked:(id)sender {
+    [self.targetCollection backgroundScanForFolders];
+}
+
 #pragma mark -
 #pragma mark User interaction
 
@@ -148,17 +156,24 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
     if (self.targetCollection) {
         [shortcutControl setTitle:[[self.targetCollection keyCombo] asString]];
         [catalogueField setStringValue:[[self.targetCollection rootFolder] path]];
+        [rescanPopUp selectItemWithTag:[self.targetCollection rescanInterval]];
         [shortcutControl setEnabled:YES];
         [selectFolderButton setEnabled:YES];
         [removeCollectionButton setEnabled:YES];
+        [rescanPopUp setEnabled:YES];
+        [rescanButton setEnabled: YES];
     }
     else
     {
         [shortcutControl setTitle:@""];
         [catalogueField setStringValue:@""];
+        [rescanPopUp selectItem:nil];
+        
         [shortcutControl setEnabled:NO];
         [selectFolderButton setEnabled:NO];
         [removeCollectionButton setEnabled:NO];
+        [rescanPopUp setEnabled:NO];
+        [rescanButton setEnabled: NO];
     }
 }
 
@@ -184,6 +199,17 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
         self.targetCollection = [delegate folderCollections][selectedRow];
     
     [self populateFieldsBasedOnTableSelection];
+}
+
+#pragma mark Scanning
+-(void)startScanning {
+    DLog(@"StartScanning!");
+    [rescanIndicator startAnimation:self];
+}
+
+-(void)stopScanning {
+    DLog(@"StopScanning!");
+    [rescanIndicator stopAnimation:self];
 }
 
 #pragma mark -

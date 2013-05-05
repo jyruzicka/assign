@@ -21,6 +21,9 @@
     IBOutlet NSTableColumn *collectionPathColumn;
     IBOutlet NSTableColumn *collectionAbbreviationColumn;
     IBOutlet NSPopUpButton *themePopUp;
+    IBOutlet NSPopUpButton *rescanPopUp;
+    IBOutlet NSButton *rescanButton;
+    IBOutlet NSProgressIndicator *rescanIndicator;
     
     // Handy to have around
     JRAppDelegate *delegate;
@@ -39,8 +42,14 @@
 -(IBAction)addCollectionButtonClicked:(id)sender;
 -(IBAction)removeCollectionButtonClicked:(id)sender;
 -(IBAction)themePopUpClicked:(id)sender;
+-(IBAction)rescanPopUpClicked:(id)sender;
+-(IBAction)rescanButtonClicked:(id)sender;
 
 //NSTableViewDataSource stuff
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView;
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row;
+
+#pragma mark Scanning
+-(void)startScanning;
+-(void)stopScanning;
 @end
