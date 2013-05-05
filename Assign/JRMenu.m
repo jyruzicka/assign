@@ -11,23 +11,32 @@
 #import "JRAppDelegate.h"
 #import "JRFolderCollection.h"
 
-static const JRMenu* _menuWithAssignOptions;
-static const JRMenu* _menuWithoutAssignOptions;
+static const JRMenu* kMenuWithAssignOptions;
+static const JRMenu* kMenuWithoutAssignOptions;
 
 @implementation JRMenu
 
 +(id)menuWithAssignOptions {
-    if (_menuWithAssignOptions)
-        return _menuWithAssignOptions;
-    else
-        return [self createMenuWithAssignOptions];
+    if (!kMenuWithAssignOptions)
+        kMenuWithAssignOptions = [self createMenuWithAssignOptions];
+
+    return kMenuWithAssignOptions;
 }
 
 +(id)menuWithoutAssignOptions {
-    if (_menuWithoutAssignOptions)
-        return _menuWithoutAssignOptions;
-    else
-        return [self createMenuWithoutAssignOptions];
+    if (!kMenuWithoutAssignOptions)
+        kMenuWithoutAssignOptions = [self createMenuWithoutAssignOptions];
+    
+    return kMenuWithoutAssignOptions;
+}
+
++(void)updateMenuItems {
+    JRMenu *menu = [self menuWithAssignOptions];
+    [menu removeAllItems];
+    
+    [menu addAssignMenuItems];
+    [menu addSeparator];
+    [menu addGenericMenuItems];
 }
 
 #pragma mark -
@@ -35,29 +44,37 @@ static const JRMenu* _menuWithoutAssignOptions;
 
 +(id)createMenuWithoutAssignOptions {
     JRMenu *m = [[JRMenu alloc] init];
-    [m addItem:[self preferencesItem]];
-    [m addItem:[self quitItem]];
+    [m addGenericMenuItems];
     return m;
 }
 
 +(id)createMenuWithAssignOptions {
     JRMenu *m = [[JRMenu alloc] init];
-    
-    JRAppDelegate *del = (JRAppDelegate *)[NSApp delegate];
-    for (JRFolderCollection *fc in [del folderCollections]) {
-        NSMenuItem *i = [[NSMenuItem alloc] initWithTitle:[[fc rootFolder] lastPathComponent] action:@selector(displayAssignWindow:) keyEquivalent:@""];
-        [i setTag:[[del folderCollections] indexOfObject:fc]];
-        [m addItem:i];
-    }
-    
-    [m addItem:[NSMenuItem separatorItem]];
-    
-    [m addItem:[self preferencesItem]];
-    [m addItem:[self quitItem]];
+    [m addAssignMenuItems];
+    [m addSeparator];
+    [m addGenericMenuItems];
     return m;
 }
 
 #pragma mark Menu items
+-(void)addAssignMenuItems {
+    JRAppDelegate *delegate = (JRAppDelegate *)[NSApp delegate];
+    for (JRFolderCollection *fc in [delegate folderCollections]) {
+        NSMenuItem *i = [[NSMenuItem alloc] initWithTitle:[[fc rootFolder] lastPathComponent] action:@selector(displayAssignWindow:) keyEquivalent:@""];
+        [i setTag:[[delegate folderCollections] indexOfObject:fc]];
+        [self addItem:i];
+    }
+}
+
+-(void)addSeparator {
+    [self addItem:[NSMenuItem separatorItem]];
+}
+
+-(void)addGenericMenuItems {
+    [self addItem:[JRMenu preferencesItem]];
+    [self addItem:[JRMenu quitItem]];
+}
+
 +(NSMenuItem *) quitItem {
     NSMenuItem *i = [[NSMenuItem alloc] initWithTitle:@"Quit Assign"
                                                action:@selector(terminate:)

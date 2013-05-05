@@ -49,16 +49,21 @@
 }
 
 #pragma mark -
-#pragma mark Defaults-related
 
--(void)saveFolderCollectionsToDefaults {
-    DLog(@"Defaults save called.");
+//Call this whenever you change the folderCollections array
+-(void)folderCollectionsDidChange {
+    // Save to defaults
     NSMutableArray *dicts = [NSMutableArray array];
     for (JRFolderCollection *fc in [self folderCollections])
         [dicts addObject:[fc toDictionary]];
     
     [defaults setObject:dicts forKey:@"folderCollections"];
+
+    // Inform menu bar
+    [JRMenu updateMenuItems];
 }
+
+#pragma mark Defaults-related
 
 //Load folderCollections
 -(void)loadFolderCollectionsFromDefaults {
@@ -73,6 +78,7 @@
     }
     else // Make defaults
         [self.folderCollections addObject: [JRFolderCollection defaultFolderCollection]];
+    [self folderCollectionsDidChange];
 }
 
 // Virtual getter/setter for defaults

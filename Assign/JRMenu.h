@@ -7,14 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@class JRAssignWindow;
 
-@interface JRMenu : NSMenu {
-    JRAssignWindow *window;
-}
+@interface JRMenu : NSMenu {}
 
 +(id)menuWithAssignOptions;
 +(id)menuWithoutAssignOptions;
+
+#pragma mark Update
++(void)updateMenuItems;
 
 @end
 

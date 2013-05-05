@@ -96,7 +96,7 @@ const NSString *kShortcutControlLabel = @"<ESC to cancel>";
  * and need to save + refresh the window.
  */
 -(void)saveAndRefreshPreferences {
-    [delegate saveFolderCollectionsToDefaults];
+    [delegate folderCollectionsDidChange];
     [collectionTableView reloadData];
 }
 
