@@ -16,7 +16,7 @@
 {
     if (self = [super init])
     {
-        statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+        statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:20];
         [self stopScanning];
         [statusItem setMenu:[JRMenu menuWithAssignOptions]];
         [statusItem setHighlightMode:YES];
@@ -26,10 +26,10 @@
 
 #pragma mark Setting the icon
 -(void)startScanning {
-    [statusItem setImage:[NSImage imageNamed:@"assign-icon-menubar-scanning"]];
+    [statusItem setImage:[NSImage imageNamed:@"menubar-busy"]];
 }
 
 -(void)stopScanning {
-    [statusItem setImage:[NSImage imageNamed:@"assign-icon-menubar"]];
+    [statusItem setImage:[NSImage imageNamed:@"menubar"]];
 }
 @end
