@@ -18,7 +18,6 @@
 
 #import "JRPreferencesController.h"
 #import "JRAssignWindowController.h"
-#import "JRAboutController.h"
 
 #import <Sparkle/SUUpdater.h>
 
