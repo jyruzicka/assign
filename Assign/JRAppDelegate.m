@@ -18,7 +18,9 @@
 
 #import "JRPreferencesController.h"
 #import "JRAssignWindowController.h"
+#import "JRAboutController.h"
 
+#import <Sparkle/SUUpdater.h>
 
 @implementation JRAppDelegate
 
@@ -29,6 +31,7 @@
     defaults = [NSUserDefaults standardUserDefaults];
     self.statusItem = [[JRStatusItem alloc] init];
     [self loadFolderCollectionsFromDefaults];
+    updater = [SUUpdater updaterForBundle:[NSBundle mainBundle]];
 }
 
 //Runs when it loses focus
@@ -131,6 +134,13 @@
     [preferences toggleVisible];
 }
 
+-(IBAction)displayAbout:(id)sender {
+    [NSApp orderFrontStandardAboutPanel:self];
+//    if (about == nil) about = [[JRAboutController alloc] init];
+//    [self disappearAssignWindow:sender];
+//    [about toggleVisible];
+}
+
 #pragma mark -
 -(NSArray *)retrieveFinderSelection{
     FinderApplication *finder = [SBApplication applicationWithBundleIdentifier:@"com.apple.finder"];
@@ -209,5 +219,10 @@
         return YES;
     }
     else return NO;
+}
+
+#pragma mark Update stuff
+-(void)checkForUpdates:(id)sender {
+    [updater checkForUpdates:sender];
 }
 @end

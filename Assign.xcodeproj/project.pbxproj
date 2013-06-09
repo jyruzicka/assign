@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3D01D10416F550A40031F2B5 /* JRAssignWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01D10316F550A40031F2B5 /* JRAssignWindowController.m */; };
 		3D01D10B16F55F9A0031F2B5 /* JRIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D01D10A16F55F9A0031F2B5 /* JRIconView.m */; };
+		3D27B6B81763F3D7001D99D5 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D27B6B71763F3D7001D99D5 /* Sparkle.framework */; };
+		3D27B6BA1763F426001D99D5 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D27B6B71763F3D7001D99D5 /* Sparkle.framework */; };
+		3D27B6BC1763F96B001D99D5 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 3D27B6BB1763F96B001D99D5 /* dsa_pub.pem */; };
 		3D39C51A16D5E65600A81878 /* JRMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D39C51916D5E65600A81878 /* JRMenu.m */; };
 		3D3AA3E416E2C722007E3604 /* JRPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D3AA3E316E2C722007E3604 /* JRPreferencesController.m */; };
 		3D496C3D16E463C2004FEE96 /* JRShortcutControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D496C3C16E463C2004FEE96 /* JRShortcutControl.m */; };
@@ -32,12 +35,16 @@
 		3D7F6B8D16E1A04D0005F06D /* assign-icon-menubar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F6B8C16E1A04D0005F06D /* assign-icon-menubar.png */; };
 		3D7F6B8F16E1B5B10005F06D /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F6B8E16E1B5B10005F06D /* Preferences.xib */; };
 		3D80D82B16E56A5900F4BA57 /* JRPreferencesPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D80D82A16E56A5900F4BA57 /* JRPreferencesPanel.m */; };
+		3D9737EE173653390062E905 /* 1klb-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D9737ED173653390062E905 /* 1klb-logo.png */; };
 		3D9B3DE216D978D700796EDA /* JRAssignWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B3DE116D978D700796EDA /* JRAssignWindow.m */; };
 		3DA9447316E0052F009ECCD2 /* JRURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA9447216E0052F009ECCD2 /* JRURL.m */; };
 		3DA9447616E04B99009ECCD2 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA9447516E04B99009ECCD2 /* Carbon.framework */; };
+		3DC07E041762D83F00723B9F /* assign-icon-desktop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC07E031762D83F00723B9F /* assign-icon-desktop.png */; };
+		3DC07E061762D85C00723B9F /* assign-icon-desktop.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DC07E051762D85C00723B9F /* assign-icon-desktop.png */; };
 		3DEB233116E06D1500AE2D70 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEB233016E06D1500AE2D70 /* ScriptingBridge.framework */; };
 		3DEB233716E0987700AE2D70 /* JRAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DEB233616E0987700AE2D70 /* JRAttributedString.m */; };
 		3DED243616DF01460021FE74 /* JRAssignView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DED243516DF01460021FE74 /* JRAssignView.m */; };
+		3DFC3BBE1762F525009104D5 /* assign-icon-desktop.icns in Resources */ = {isa = PBXBuildFile; fileRef = 3DFC3BBD1762F525009104D5 /* assign-icon-desktop.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +57,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3D27B6B91763F412001D99D5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3D27B6BA1763F426001D99D5 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3D01D10216F550A40031F2B5 /* JRAssignWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAssignWindowController.h; sourceTree = "<group>"; };
 		3D01D10316F550A40031F2B5 /* JRAssignWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAssignWindowController.m; sourceTree = "<group>"; };
 		3D01D10916F55F9A0031F2B5 /* JRIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRIconView.h; sourceTree = "<group>"; };
 		3D01D10A16F55F9A0031F2B5 /* JRIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRIconView.m; sourceTree = "<group>"; };
+		3D27B6B71763F3D7001D99D5 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		3D27B6BB1763F96B001D99D5 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		3D39C51816D5E65600A81878 /* JRMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRMenu.h; sourceTree = "<group>"; };
 		3D39C51916D5E65600A81878 /* JRMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRMenu.m; sourceTree = "<group>"; };
 		3D3AA3E216E2C722007E3604 /* JRPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRPreferencesController.h; sourceTree = "<group>"; };
@@ -101,16 +123,20 @@
 		3D7F6B8E16E1B5B10005F06D /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		3D80D82916E56A5900F4BA57 /* JRPreferencesPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRPreferencesPanel.h; sourceTree = "<group>"; };
 		3D80D82A16E56A5900F4BA57 /* JRPreferencesPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRPreferencesPanel.m; sourceTree = "<group>"; };
+		3D9737ED173653390062E905 /* 1klb-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1klb-logo.png"; sourceTree = "<group>"; };
 		3D9B3DE016D978D700796EDA /* JRAssignWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAssignWindow.h; sourceTree = "<group>"; };
 		3D9B3DE116D978D700796EDA /* JRAssignWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAssignWindow.m; sourceTree = "<group>"; };
 		3DA9447116E0052F009ECCD2 /* JRURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRURL.h; sourceTree = "<group>"; };
 		3DA9447216E0052F009ECCD2 /* JRURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRURL.m; sourceTree = "<group>"; };
 		3DA9447516E04B99009ECCD2 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		3DC07E031762D83F00723B9F /* assign-icon-desktop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assign-icon-desktop.png"; sourceTree = "<group>"; };
+		3DC07E051762D85C00723B9F /* assign-icon-desktop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "assign-icon-desktop.png"; sourceTree = "<group>"; };
 		3DEB233016E06D1500AE2D70 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		3DEB233516E0987700AE2D70 /* JRAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAttributedString.h; sourceTree = "<group>"; };
 		3DEB233616E0987700AE2D70 /* JRAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAttributedString.m; sourceTree = "<group>"; };
 		3DED243416DF01460021FE74 /* JRAssignView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAssignView.h; sourceTree = "<group>"; };
 		3DED243516DF01460021FE74 /* JRAssignView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAssignView.m; sourceTree = "<group>"; };
+		3DFC3BBD1762F525009104D5 /* assign-icon-desktop.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "assign-icon-desktop.icns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +147,7 @@
 				3DEB233116E06D1500AE2D70 /* ScriptingBridge.framework in Frameworks */,
 				3DA9447616E04B99009ECCD2 /* Carbon.framework in Frameworks */,
 				3D51176D16D55D740012C9C0 /* Cocoa.framework in Frameworks */,
+				3D27B6B81763F3D7001D99D5 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +207,7 @@
 		3D3AA3F216E2D846007E3604 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3D27B6BB1763F96B001D99D5 /* dsa_pub.pem */,
 				3D3AA3F316E2D85B007E3604 /* Images */,
 				3D51178416D55D740012C9C0 /* Assign.xcdatamodeld */,
 				3D7F6B8316E1980B0005F06D /* Finder.h */,
@@ -196,6 +224,8 @@
 		3D3AA3F316E2D85B007E3604 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3DC07E031762D83F00723B9F /* assign-icon-desktop.png */,
+				3D9737ED173653390062E905 /* 1klb-logo.png */,
 				3D67200A17352C8300F27127 /* assign-icon-menubar-scanning.png */,
 				3D7F6B8C16E1A04D0005F06D /* assign-icon-menubar.png */,
 				3D7F6B8416E199700005F06D /* assign-icon.png */,
@@ -206,6 +236,8 @@
 		3D51175D16D55D730012C9C0 = {
 			isa = PBXGroup;
 			children = (
+				3DFC3BBD1762F525009104D5 /* assign-icon-desktop.icns */,
+				3DC07E051762D85C00723B9F /* assign-icon-desktop.png */,
 				3D7F6BA616E1B9C90005F06D /* nib files */,
 				3D9B3DE816D9B8A500796EDA /* Models */,
 				3D9B3DE416D9B4C000796EDA /* Views */,
@@ -229,6 +261,7 @@
 		3D51176B16D55D740012C9C0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3D27B6B71763F3D7001D99D5 /* Sparkle.framework */,
 				3DEB233016E06D1500AE2D70 /* ScriptingBridge.framework */,
 				3DA9447516E04B99009ECCD2 /* Carbon.framework */,
 				3D51176C16D55D740012C9C0 /* Cocoa.framework */,
@@ -329,6 +362,7 @@
 				3D51176416D55D730012C9C0 /* Sources */,
 				3D51176516D55D730012C9C0 /* Frameworks */,
 				3D51176616D55D730012C9C0 /* Resources */,
+				3D27B6B91763F412001D99D5 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -397,6 +431,11 @@
 				3D7F6B8D16E1A04D0005F06D /* assign-icon-menubar.png in Resources */,
 				3D7F6B8F16E1B5B10005F06D /* Preferences.xib in Resources */,
 				3D67200B17352C8300F27127 /* assign-icon-menubar-scanning.png in Resources */,
+				3D9737EE173653390062E905 /* 1klb-logo.png in Resources */,
+				3DC07E041762D83F00723B9F /* assign-icon-desktop.png in Resources */,
+				3DC07E061762D85C00723B9F /* assign-icon-desktop.png in Resources */,
+				3DFC3BBE1762F525009104D5 /* assign-icon-desktop.icns in Resources */,
+				3D27B6BC1763F96B001D99D5 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;

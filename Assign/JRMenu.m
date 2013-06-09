@@ -71,6 +71,8 @@ static const JRMenu* kMenuWithoutAssignOptions;
 }
 
 -(void)addGenericMenuItems {
+    [self addItem:[JRMenu aboutItem]];
+    [self addItem: [JRMenu updateItem]];
     [self addItem:[JRMenu preferencesItem]];
     [self addItem:[JRMenu quitItem]];
 }
@@ -87,6 +89,22 @@ static const JRMenu* kMenuWithoutAssignOptions;
     NSMenuItem *i = [[NSMenuItem alloc] initWithTitle:@"Preferences…"
                                                    action:@selector(displayPreferences:)
                                             keyEquivalent:@","];
+    [i setTarget:[NSApp delegate]];
+    return i;
+}
+
++(NSMenuItem *)aboutItem {
+    NSMenuItem *i = [[NSMenuItem alloc] initWithTitle:@"About"
+                                               action:@selector(displayAbout:)
+                                        keyEquivalent:@""];
+    [i setTarget:[NSApp delegate]];
+    return i;
+}
+
++(NSMenuItem *)updateItem {
+    NSMenuItem *i = [[NSMenuItem alloc] initWithTitle:@"Check for updates…"
+                                               action:@selector(checkForUpdates:)
+                                        keyEquivalent:@""];
     [i setTarget:[NSApp delegate]];
     return i;
 }

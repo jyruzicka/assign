@@ -7,17 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@class JRStatusItem;
-@class JRPreferencesController;
-@class JRAssignWindowController;
-@class JRFolderCollection;
-
+@class JRStatusItem, JRPreferencesController, JRAssignWindowController, JRAboutController, JRFolderCollection, SUUpdater;
 
 @interface JRAppDelegate : NSObject <NSApplicationDelegate>{
     JRAssignWindowController *assign;
     JRPreferencesController *preferences;
+    JRAboutController *about;
     NSUserDefaults *defaults;
     int scansInProgress;
+    SUUpdater *updater;
 }
 
 @property JRStatusItem *statusItem;
@@ -39,6 +37,7 @@
 -(IBAction)displayAssignWindow:(id)sender;
 -(IBAction)disappearAssignWindow:(id)sender;
 -(IBAction)displayPreferences:(id)sender;
+-(IBAction)displayAbout:(id)sender;
 
 #pragma mark -
 -(NSArray *)retrieveFinderSelection;
@@ -50,4 +49,7 @@
 #pragma mark folder collections
 -(void)addFolderCollection:(JRFolderCollection *)fc;
 -(BOOL)removeFolderCollection:(JRFolderCollection *)fc;
+
+#pragma mark Update stuff
+-(void)checkForUpdates:(id)sender;
 @end
